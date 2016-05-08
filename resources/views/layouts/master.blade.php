@@ -26,6 +26,25 @@
     .input-group .form-control {
         z-index: inherit;
     }
+    .page-sub-page .wrapper .primary-navigation-wrapper .navbar-brand:before, .page-homepage-courses .wrapper .primary-navigation-wrapper .navbar-brand:before, .page-homepage-events .wrapper .primary-navigation-wrapper .navbar-brand:before {
+        height: 190px;
+    }
+
+    .navigation-wrapper .primary-navigation-wrapper header .navbar-brand:before {
+        height: 190px;
+    }
+    .navigation-wrapper .primary-navigation-wrapper header .navbar-brand img {
+        max-height: 120px;
+    }
+    .breadcrumb {
+        margin-top: 80px;
+    }
+    @media (max-width: 767px) {
+        .navigation-wrapper .primary-navigation-wrapper header .navbar-brand img {
+            max-width: 45px;
+            margin-left: 22px;
+        }
+    }
     </style>
 
     <!-- Page Stylesheets -->
@@ -39,12 +58,15 @@
 <div class="navigation-wrapper">
     <div class="secondary-navigation-wrapper">
         <div class="container">
-            <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">000-123-456-789</span></div>
+            <div class="navigation-contact pull-left">Nwatarali Cheta Sidney  <span class="opacity-70">GOU/12/1443</span></div>
             <ul class="secondary-navigation list-unstyled pull-right">
-                <li><a href="#">Prospective Students</a></li>
-                <li><a href="#">Current Students</a></li>
-                <li><a href="#">Faculty & Staff</a></li>
-                <li><a href="#">Alumni</a></li>
+                @if(Auth::guest())
+                <li><a href="{{ url('register') }}">Register</a></li>
+                <li><a href="{{ url('login') }}">Log In</a></li>
+                @else
+                <li><a href="{{ url('home') }}">Profile</a></li>
+                <li><a href="{{ url('logout') }}">Log Out</a></li>
+                @endif
             </ul>
         </div>
     </div><!-- /.secondary-navigation -->
@@ -59,66 +81,37 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="brand"></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="#" class="has-child no-link">Home</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="index.html">Homepage Education</a></li>
-                                <li><a href="homepage-courses.html">Homepage Courses</a></li>
-                                <li><a href="homepage-events.html">Homepage Events</a></li>
-                            </ul>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="about-us.html">About</a>
                         </li>
                         <li>
                             <a href="#" class=" has-child no-link">Courses</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="course-landing-page.html">Course Landing Page</a></li>
-                                <li><a href="course-listing.html">Course Listing</a></li>
-                                <li><a href="course-listing-images.html">Course Listing with Images</a></li>
                                 <li><a href="course-detail-v1.html">Course Detail v1</a></li>
                                 <li><a href="course-detail-v2.html">Course Detail v2</a></li>
                                 <li><a href="course-detail-v3.html">Course Detail v3</a></li>
+                                <li><a href="course-listing.html">View All Courses</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="has-child no-link">Events</a>
+                            <a href="#" class="has-child no-link">Lecturers</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="event-listing-images.html">Events Listing with images</a></li>
-                                <li><a href="event-listing.html">Events Listing</a></li>
-                                <li><a href="event-grid.html">Events Grid</a></li>
-                                <li><a href="event-detail.html">Event Detail</a></li>
-                                <li><a href="event-calendar.html">Events Calendar</a></li>
+                                <li><a href="course-detail-v1.html">Lecturer Detail v1</a></li>
+                                <li><a href="course-detail-v2.html">Lecturer Detail v2</a></li>
+                                <li><a href="course-detail-v3.html">Lecturer Detail v3</a></li>
+                                <li><a href="course-listing.html">View All Lecturers</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="about-us.html">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#" class="has-child no-link">Blog</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="blog-listing.html">Blog listing</a></li>
-                                <li><a href="blog-detail.html">Blog Detail</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="has-child no-link">Pages</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="full-width.html">Fullwidth</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="microsite.html">Microsite</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="members.html">Members</a></li>
-                                <li><a href="member-detail.html">Member Detail</a></li>
-                                <li><a href="register-sign-in.html">Register & Sign In</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact-us.html">Contact Us</a>
+                            <a href="contact-us.html">Contact</a>
                         </li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
@@ -132,25 +125,12 @@
 <!-- end Header -->
 
 <!-- Breadcrumb -->
-<div class="container">
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li class="active">Full Width</li>
-    </ol>
-</div>
+@yield('breadcrumb')
 <!-- end Breadcrumb -->
 
 <!-- Page Content -->
 <div id="page-content">
-    <div class="container">
-        <!--MAIN Content-->
-        <div id="page-main">
-            <section id="right-sidebar">
-                @yield('content')
-            </section>
-        </div><!-- /#page-main -->
-        <!-- end MAIN Content -->
-    </div><!-- /.container -->
+@yield('content')
 </div>
 <!-- end Page Content -->
 
@@ -162,9 +142,8 @@
                 <div class="footer-social">
                     <figure>Follow us:</figure>
                     <div class="icons">
+                        <a href="https://www.facebook.com/gouniversityenugu" target="_blank"><i class="fa fa-facebook"></i></a>
                         <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-pinterest"></i></a>
                         <a href=""><i class="fa fa-youtube-play"></i></a>
                     </div><!-- /.icons -->
                 </div><!-- /.social -->
@@ -185,48 +164,49 @@
             <div class="row">
                 <div class="col-md-3 col-sm-12">
                     <aside class="logo">
-                        <img src="{{ asset('img/logo-white.png') }}" class="vertical-center">
+                        <img src="{{ asset('img/logo.png') }}" class="vertical-center">
                     </aside>
                 </div><!-- /.col-md-3 -->
                 <div class="col-md-3 col-sm-4">
                     <aside>
-                        <header><h4>Contact Us</h4></header>
+                        <header><h4>Contact</h4></header>
                         <address>
-                            <strong>University of Universo</strong>
+                            <strong>Godfrey Okoye University</strong>
                             <br>
-                            <span>4877 Spruce Drive</span>
+                            <span>Thinkers Corner Campus</span>
                             <br><br>
-                            <span>West Newton, PA 15089</span>
+                            <span>Ugwuomu-Nike, Enugu State</span>
                             <br>
-                            <abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
+                            <span>Nigeria</span>
                             <br>
-                            <abbr title="Email">Email:</abbr> <a href="#">questions@youruniversity.com</a>
+                            <abbr title="Telephone">Tel:</abbr> <a href="tel:+2348172672245">+234 817-267-2245</a>
+                            <br>
+                            <abbr title="Email">Email:</abbr> <a href="mailto:registrar@gouni.edu.ng">registrar@gouni.edu.ng</a>
                         </address>
                     </aside>
                 </div><!-- /.col-md-3 -->
                 <div class="col-md-3 col-sm-4">
                     <aside>
-                        <header><h4>Important Links</h4></header>
+                        <header><h4>Quick Links</h4></header>
                         <ul class="list-links">
-                            <li><a href="#">Future Students</a></li>
-                            <li><a href="#">Alumni</a></li>
-                            <li><a href="#">Give a Donation</a></li>
-                            <li><a href="#">Professors</a></li>
-                            <li><a href="#">Libary & Health</a></li>
-                            <li><a href="#">Research</a></li>
+                            <li><a href="#">About This App</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
                         </ul>
                     </aside>
                 </div><!-- /.col-md-3 -->
                 <div class="col-md-3 col-sm-4">
                     <aside>
-                        <header><h4>About Universo</h4></header>
-                        <p>Aliquam feugiat turpis quis felis adipiscing, non pulvinar odio lacinia.
-                            Aliquam elementum pharetra fringilla. Duis blandit, sapien in semper vehicula,
-                            tellus elit gravida odio, ac tincidunt nisl mi at ante. Vivamus tincidunt nunc nibh.
+                        <header><h4>About Godfrey Okoye University</h4></header>
+                        <p>Godfrey Okoye University was founded in 2008 by Very Reverend
+                        Father Professor Dr. Christian Aniekwe for the Catholic Diocese of Enugu.</p>
+
+                        <p>The University comprises of four faculties: 
+                        Faculty of Management and Social Sciences,
+                        Faculty of Natural and Applied Sciences,
+                        Faculty of Education, and 
+                        Faculty of Arts.
                         </p>
-                        <div>
-                            <a href="" class="read-more">All News</a>
-                        </div>
                     </aside>
                 </div><!-- /.col-md-3 -->
             </div><!-- /.row -->
@@ -237,7 +217,7 @@
     <section id="footer-bottom">
         <div class="container">
             <div class="footer-inner">
-                <div class="copyright">© Theme Starz, All rights reserved</div><!-- /.copyright -->
+                <div class="copyright">&copy; {{ \Carbon\Carbon::now()->format('Y') }} <a href="http://gouni.edu.ng/" target="_blank">Godfrey Okoye University</a>. All rights reserved.</div><!-- /.copyright -->
             </div><!-- /.footer-inner -->
         </div><!-- /.container -->
     </section><!-- /#footer-bottom -->

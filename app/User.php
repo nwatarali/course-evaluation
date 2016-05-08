@@ -6,21 +6,36 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    /* ---------------------------- Properties --------------------------- */
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'person_id', 'person_type', 'name', 'email', 'password',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    
+    /* ---------------------------- Relationships --------------------------- */
+    
+    /**
+     * Define relationship: one User to one Person
+     *
+     * @return Relation
+     */
+    public function person()
+    {
+        return $this->morphTo();
+    }
 }

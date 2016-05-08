@@ -2,9 +2,26 @@
 
 @section('title', 'Dashboard')
 
+@section('breadcrumb')
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="{{ url('/') }}">Home</a></li>
+        <li class="active"> <a href="{{ url('home') }}">Dashboard</a></li>
+    </ol>
+</div>
+@endsection
+
 @section('content')
-<header><h2>Dashboard</h2></header>
-<p>
-    You are logged in!
-</p>
+    <div class="container">
+        <!--MAIN Content-->
+        <div id="page-main">
+            <section id="right-sidebar">
+                <header><h2>Dashboard</h2></header>
+                <p>
+                    You are logged in!
+                </p>
+            </section>
+        </div><!-- /#page-main -->
+        <!-- end MAIN Content -->
+    </div><!-- /.container -->
 @endsection
