@@ -140,9 +140,8 @@
                         <figure class="author-picture"><img src="{{ asset('img/student-testimonial.jpg') }}" alt=""></figure>
                         <article class="paragraph-wrapper">
                             <div class="inner">
-                                <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
-                                    Ut sollicitudin lectus dolor eget imperdiet libero pulvinar sit amet.</header>
-                                <footer>Claire Doe</footer>
+                                <header>Reading, after a certain age, diverts the mind too much from its creative pursuits. Any man who reads too much and uses his own brain too little falls into lazy habits of thinking.</header>
+                                <footer>Albert Einstein</footer>
                             </div>
                         </article>
                     </blockquote>
@@ -152,9 +151,8 @@
                         <figure class="author-picture"><img src="{{ asset('img/student-testimonial.jpg') }}" alt=""></figure>
                         <article class="paragraph-wrapper">
                             <div class="inner">
-                                <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
-                                    Ut sollicitudin lectus dolor eget imperdiet libero pulvinar sit amet.</header>
-                                <footer>Claire Doe</footer>
+                                <header>Reading, after a certain age, diverts the mind too much from its creative pursuits. Any man who reads too much and uses his own brain too little falls into lazy habits of thinking.</header>
+                                <footer>Albert Einstein</footer>
                             </div>
                         </article>
                     </blockquote>
@@ -173,17 +171,53 @@
                 <div class="col-md-3 col-sm-4">
                     <section id="division" class="has-dark-background">
                         <header>
-                            <h2>Faculty of Arts</h2>
+                            <h2>Faculty of Management and Social Science</h2>
                         </header>
                         <div class="section-content">
                             <ul class="list-links">
                                 <li><a href="#">Accounting & Finance</a></li>
-                                <li><a href="#">Advertising & Marketing</a></li>
-                                <li><a href="#">Architecture & Interior</a></li>
-                                <li><a href="#">Arts & Design</a></li>
-                                <li><a href="#">Broadcasting & Journalism</a></li>
+                                <li><a href="#">Marketing</a></li>
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Economics</a></li>
+                                <li><a href="#">Mass Communication</a></li>
                                 <li><a href="#">Business & Management</a></li>
+                                <li><a href="#">Psychology</a></li>
+                            </ul>
+                        </div><!-- /.section-content -->
+                    </section><!-- #.divisions -->
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <section id="division" class="has-dark-background">
+                        <header>
+                            <h2>Faculty of Natural and Applied Science</h2>
+                        </header>
+                        <div class="section-content">
+                            <ul class="list-links">
+                                <li><a href="#">Computer Science</a></li>
+                                <li><a href="#">Industrial Chemistry</a></li>
+                                <li><a href="#">Biotechnology</a></li>
+                                <li><a href="#">Biochemistry</a></li>
+                                <li><a href="#">Geology & Minning</a></li>
+                                <li><a href="#">Applied Science</a></li>
                                 <li><a href="#">Computing & IT</a></li>
+                            </ul>
+                        </div><!-- /.section-content -->
+                    </section><!-- #.divisions -->
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <section id="division" class="has-dark-background">
+                        <header>
+                            <h2>Faculty of Education</h2>
+                        </header>
+                        <div class="section-content">
+                            <ul class="list-links">
+                                <li><a href="#">Biology Education</a></li>
+                                <li><a href="#">Business Education</a></li>
+                                <li><a href="#">Chemistry Education</a></li>
+                                <li><a href="#">Computer Science Education</a></li>
+                                <li><a href="#">Economics Education</a></li>
+                                <li><a href="#">English & Literary Studies Education</a></li>
+                                <li><a href="#">Accounting Education</a></li>
                             </ul>
                         </div><!-- /.section-content -->
                     </section><!-- #.divisions -->
@@ -195,49 +229,13 @@
                         </header>
                         <div class="section-content">
                             <ul class="list-links">
-                                <li><a href="#">Accounting & Finance</a></li>
-                                <li><a href="#">Advertising & Marketing</a></li>
-                                <li><a href="#">Architecture & Interior</a></li>
-                                <li><a href="#">Arts & Design</a></li>
-                                <li><a href="#">Broadcasting & Journalism</a></li>
-                                <li><a href="#">Business & Management</a></li>
-                                <li><a href="#">Computing & IT</a></li>
-                            </ul>
-                        </div><!-- /.section-content -->
-                    </section><!-- #.divisions -->
-                </div>
-                <div class="col-md-3 col-sm-4">
-                    <section id="division" class="has-dark-background">
-                        <header>
-                            <h2>Faculty of Arts</h2>
-                        </header>
-                        <div class="section-content">
-                            <ul class="list-links">
-                                <li><a href="#">Accounting & Finance</a></li>
-                                <li><a href="#">Advertising & Marketing</a></li>
-                                <li><a href="#">Architecture & Interior</a></li>
-                                <li><a href="#">Arts & Design</a></li>
-                                <li><a href="#">Broadcasting & Journalism</a></li>
-                                <li><a href="#">Business & Management</a></li>
-                                <li><a href="#">Computing & IT</a></li>
-                            </ul>
-                        </div><!-- /.section-content -->
-                    </section><!-- #.divisions -->
-                </div>
-                <div class="col-md-3 col-sm-4">
-                    <section id="division" class="has-dark-background">
-                        <header>
-                            <h2>Faculty of Arts</h2>
-                        </header>
-                        <div class="section-content">
-                            <ul class="list-links">
-                                <li><a href="#">Accounting & Finance</a></li>
-                                <li><a href="#">Advertising & Marketing</a></li>
-                                <li><a href="#">Architecture & Interior</a></li>
-                                <li><a href="#">Arts & Design</a></li>
-                                <li><a href="#">Broadcasting & Journalism</a></li>
-                                <li><a href="#">Business & Management</a></li>
-                                <li><a href="#">Computing & IT</a></li>
+                                <li><a href="#">Music</a></li>
+                                <li><a href="#">History, International Studies & Diplomacy</a></li>
+                                <li><a href="#">English & Literary Studies</a></li>
+                                <!--<li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>-->
                             </ul>
                         </div><!-- /.section-content -->
                     </section><!-- #.divisions -->

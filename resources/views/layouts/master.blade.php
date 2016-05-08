@@ -95,18 +95,18 @@
                         <li>
                             <a href="#" class=" has-child no-link">Courses</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="course-detail-v1.html">Course Detail v1</a></li>
-                                <li><a href="course-detail-v2.html">Course Detail v2</a></li>
-                                <li><a href="course-detail-v3.html">Course Detail v3</a></li>
+                                <li><a href="course-detail-v1.html">CSC 458 - Queuing System</a></li>
+                                <li><a href="course-detail-v2.html">CSC 484 - Artificial Intelligence</a></li>
+                                <li><a href="course-detail-v3.html">CSC 488 - Expert System</a></li>
                                 <li><a href="course-listing.html">View All Courses</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" class="has-child no-link">Lecturers</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="course-detail-v1.html">Lecturer Detail v1</a></li>
-                                <li><a href="course-detail-v2.html">Lecturer Detail v2</a></li>
-                                <li><a href="course-detail-v3.html">Lecturer Detail v3</a></li>
+                                <li><a href="course-detail-v1.html">Prof. GAM Ikekeonwu</a></li>
+                                <li><a href="course-detail-v2.html">Prof. F.S Bakpo</a></li>
+                                <li><a href="course-detail-v3.html">Engr. Chineke</a></li>
                                 <li><a href="course-listing.html">View All Lecturers</a></li>
                             </ul>
                         </li>
