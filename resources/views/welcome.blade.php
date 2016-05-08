@@ -74,9 +74,9 @@
                                 <figure class="professor-image"><a href="member-detail.html"><img src="{{ asset('img/professor.jpg') }}" alt=""></a></figure>
                                 <aside>
                                     <header>
-                                        <a href="member-detail.html">Prof. Mathew Davis</a>
+                                        <a href="member-detail.html">Prof. GAM Ikekeonwu</a>
                                         <div class="divider"></div>
-                                        <figure class="professor-description">Applied Science and Engineering</figure>
+                                        <figure class="professor-description">Natural and Applied Science</figure>
                                     </header>
                                     <a href="member-detail.html" class="show-profile">Show Profile</a>
                                 </aside>
@@ -85,9 +85,9 @@
                                 <figure class="professor-image"><a href="member-detail.html"><img src="{{ asset('img/professor-02.jpg') }}" alt=""></a></figure>
                                 <aside>
                                     <header>
-                                        <a href="member-detail.html">Prof. Jane Stairway</a>
+                                        <a href="member-detail.html">Prof. F.S Bakpo</a>
                                         <div class="divider"></div>
-                                        <figure class="professor-description">Applied Science and Engineering</figure>
+                                        <figure class="professor-description">Natural and Applied Science</figure>
                                     </header>
                                     <a href="member-detail.html" class="show-profile">Show Profile</a>
                                 </aside>
