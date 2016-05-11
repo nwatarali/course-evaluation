@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\Student;
+use App\Models\Lecturer;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -48,11 +50,19 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
+        $rules = array(
+            'new_account_type' => 'required',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'department' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-        ]);
+            'terms_and_conditions' => 'accepted'
+        );
+        if (isset($data['new_account_type']) && $data['new_account_type'] == 'student') {
+            $rules['registration_number'] = 'required|unique:students';
+        }
+        return Validator::make($data, $rules);
     }
 
     /**
@@ -63,10 +73,53 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        switch ($data['new_account_type']) {
+            case 'student':
+                $student = Student::create([
+                    'registration_number' => $data['registration_number'],
+                    'prefix' => $data['prefix'],
+                    'first_name' => $data['first_name'],
+                    'middle_name' => $data['middle_name'],
+                    'last_name' => $data['last_name'],
+                    'suffix' => $data['suffix'],
+                    'department' => $data['department'],
+                ]);
+                $user = User::create([
+                    'person_id' => $student->id,
+                    'person_type' => 'student',
+                    'email' => $data['email'],
+                    'password' => bcrypt($data['password']),
+                ]);
+
+                $student->user_id = $user->id;
+                $student->save();
+
+                return $user;
+                break;
+            case 'lecturer':
+                $lecturer = Lecturer::create([
+                    'prefix' => $data['prefix'],
+                    'first_name' => $data['first_name'],
+                    'middle_name' => $data['middle_name'],
+                    'last_name' => $data['last_name'],
+                    'suffix' => $data['suffix'],
+                    'department' => $data['department'],
+                ]);
+                $user = User::create([
+                    'person_id' => $lecturer->id,
+                    'person_type' => 'lecturer',
+                    'email' => $data['email'],
+                    'password' => bcrypt($data['password']),
+                ]);
+
+                $lecturer->user_id = $user->id;
+                $lecturer->save();
+
+                return $user;
+                break;
+        }
+
+        abort(505, 'Missing account type.');
+        return;
     }
 }

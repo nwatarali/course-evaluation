@@ -59,5 +59,5 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-</div>
+
 @endsection

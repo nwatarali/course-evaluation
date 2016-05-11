@@ -19,27 +19,28 @@
                     <div class="slider-content">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Raise the bar of teaching performance! Register now:</h1>
-                                <form id="slider-form" role="form" action="" method="post">
+                                <h1>Let's raise the bar of teaching performance! Register now:</h1>
+                                <form id="slider-form" role="form" action="{{ url('redirect_register') }}" method="POST">
+                                    {!! csrf_field() !!}
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Full Name" type="text" required>
+                                                <input class="form-control has-dark-background" name="name" id="slider-name" placeholder="Full Name" type="text" required>
                                             </div>
                                         </div><!-- /.col-md-6 -->
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="slider-email" id="slider-email" placeholder="Email" type="email" required>
+                                                <input class="form-control has-dark-background" name="email" id="slider-email" placeholder="Email" type="email" required>
                                             </div>
                                         </div><!-- /.col-md-6 -->
                                     </div><!-- /.row -->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="input-group">
-                                                <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                                <select name="new_account_type" id="slider-account-type" class="has-dark-background">
                                                     <option value="- Not selected -">I am a...</option>
-                                                    <option value="Student">Student</option>
-                                                    <option value="Lecturer">Lecturer</option>
+                                                    <option value="student">Student</option>
+                                                    <option value="lecturer">Lecturer</option>
                                                 </select>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-6 -->

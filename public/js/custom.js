@@ -168,7 +168,7 @@ $(document).ready(function($) {
 
 //  Slider Subscription Form
 
-    $("#slider-submit").bind("click", function(event){
+/*    $("#slider-submit").bind("click", function(event){
         $("#slider-form").validate({
             submitHandler: function() {
                 $.post("slider-form.php", $("#slider-form").serialize(),  function(response) {
@@ -178,7 +178,7 @@ $(document).ready(function($) {
                 return false;
             }
         });
-    });
+    });*/
 
 //  Contact Form with validation
 
