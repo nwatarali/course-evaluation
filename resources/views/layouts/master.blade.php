@@ -7,7 +7,7 @@
     <meta name="author" content="Cheta Nwatarali">
     <title>
     @section('full_title')
-    @yield('title', 'Basic Page') | GOU Course Evaluation
+    @yield('title', 'Login') | GOU Course Evaluation
     @show
     </title>
 
@@ -27,14 +27,15 @@
         z-index: inherit;
     }
     .page-sub-page .wrapper .primary-navigation-wrapper .navbar-brand:before, .page-homepage-courses .wrapper .primary-navigation-wrapper .navbar-brand:before, .page-homepage-events .wrapper .primary-navigation-wrapper .navbar-brand:before {
-        height: 190px;
+        height: 0px;
     }
 
     .navigation-wrapper .primary-navigation-wrapper header .navbar-brand:before {
-        height: 190px;
+        height: 0px;
     }
     .navigation-wrapper .primary-navigation-wrapper header .navbar-brand img {
-        max-height: 120px;
+        max-height: 110px;
+        bottom: 30px;
     }
     .breadcrumb {
         margin-top: 80px;
@@ -98,8 +99,6 @@
                                 <ul class="list-unstyled child-navigation">
                                     <li><a href="course-detail-v1.html">CSC 458 - Queuing System</a></li>
                                     <li><a href="course-detail-v2.html">CSC 484 - Artificial Intelligence</a></li>
-                                    <li><a href="course-detail-v3.html">CSC 488 - Expert System</a></li>
-                                    <li><a href="course-listing.html">View All Courses</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -107,8 +106,6 @@
                                 <ul class="list-unstyled child-navigation">
                                     <li><a href="course-detail-v1.html">Prof. GAM Ikekeonwu</a></li>
                                     <li><a href="course-detail-v2.html">Prof. F.S Bakpo</a></li>
-                                    <li><a href="course-detail-v3.html">Engr. Chineke</a></li>
-                                    <li><a href="course-listing.html">View All Lecturers</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -200,7 +197,7 @@
                         <aside>
                             <header><h4>About Godfrey Okoye University</h4></header>
                             <p>Godfrey Okoye University was founded in 2008 by Very Reverend
-                            Father Professor Dr. Christian Aniekwe for the Catholic Diocese of Enugu.</p>
+                            Father Professor Dr. Christian Anieke for the Catholic Diocese of Enugu.</p>
 
                             <p>The University comprises of four faculties: 
                             Faculty of Management and Social Sciences,
