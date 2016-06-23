@@ -54,14 +54,12 @@ class AuthController extends Controller
             'new_account_type' => 'required',
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'department' => 'required|max:255',
+            'department_id' => 'required|exists:departments,id',
+            'registration_number' => 'required_if:new_account_type,student|unique:students',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'terms_and_conditions' => 'accepted'
         );
-        if (isset($data['new_account_type']) && $data['new_account_type'] == 'student') {
-            $rules['registration_number'] = 'required|unique:students';
-        }
         return Validator::make($data, $rules);
     }
 
@@ -82,7 +80,7 @@ class AuthController extends Controller
                     'middle_name' => $data['middle_name'],
                     'last_name' => $data['last_name'],
                     'suffix' => $data['suffix'],
-                    'department' => $data['department'],
+                    'department_id' => $data['department_id'],
                 ]);
                 $user = User::create([
                     'person_id' => $student->id,
@@ -103,7 +101,7 @@ class AuthController extends Controller
                     'middle_name' => $data['middle_name'],
                     'last_name' => $data['last_name'],
                     'suffix' => $data['suffix'],
-                    'department' => $data['department'],
+                    'department_id' => $data['department_id'],
                 ]);
                 $user = User::create([
                     'person_id' => $lecturer->id,

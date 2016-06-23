@@ -39,10 +39,11 @@ Route::post('redirect_register', function () {
 Route::get('/', function () {
 	return view('welcome');
 });
-Route::get('/home', function () {
-	return view('home');
-});
 
+	Route::get('json/lecturers', 'LecturerController@json');
 Route::group(['middleware' => 'auth'], function () {
-
+	Route::get('/home', function () {
+		return view('home');
+	});
+	Route::resource('evaluation', 'EvaluationController');
 });

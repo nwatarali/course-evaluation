@@ -22,7 +22,8 @@ class CreateLecturersTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('suffix')->nullable();
-            $table->string('department');
+            $table->integer('department_id')->unsigned();
+            $table->foreign('department_id')->references('id')->on('departments');
             
             $table->timestamps();
             $table->softDeletes();

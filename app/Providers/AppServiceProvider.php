@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
+use App\Models\Department;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
             'student' => \App\Models\Student::class,
             'lecturer' => \App\Models\Lecturer::class
         ]);
+
+        view()->share('departments', Department::all());
     }
 
     /**

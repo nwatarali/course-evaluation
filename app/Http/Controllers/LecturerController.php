@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class EvaluationController extends Controller
+use App\Models\Lecturer;
+
+class LecturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,11 +27,7 @@ class EvaluationController extends Controller
      */
     public function create()
     {
-        $user = \Auth::user();
-        $account_type = $user->person_type;
-        if($account_type == 'student') {
-            return view('evaluation.edit');
-        }
+        //
     }
 
     /**
@@ -86,5 +84,25 @@ class EvaluationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function json(Request $request)
+    {
+        if (isset($request->department_id)) {
+            $lecturers = Lecturer::where('department_id', $request->department_id)->get()
+                    ->sortBy('last_name')
+                    ->map(function ($lecturer) {
+                        return array('id' => $lecturer->id, 'name' => $lecturer->getFullName());
+                    });
+        } else {
+            $lecturers = Lecturer::all()
+                    ->sortBy('last_name')
+                    ->map(function ($lecturer) {
+                        return array('id' => $lecturer->id, 'name' => $lecturer->getFullName());
+                    });
+        }
+
+        return response()->json($lecturers->pluck('name', 'id'));
+        
     }
 }

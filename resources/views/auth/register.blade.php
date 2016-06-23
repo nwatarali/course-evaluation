@@ -72,7 +72,9 @@
                             </div>
                             <div class="form-group has-feedback {{ $errors->has('department') ? ' has-error' : '' }}">
                                 <label for="new-account-department">*Department</label>
-                                <input type="text" maxlength="255" class="form-control" id="new-account-department" placeholder="Department" name="department" value="{{ old('department') }}">
+
+                                {!! Form::select('department_id', $departments->pluck('name', 'id'), null, ['placeholder' => 'Department', 'value' => old('department_id'), 'id' => 'new-account-department']) !!}
+                                
                                 @if ($errors->has('department'))
                                     <span class="fa fa-times form-control-feedback" aria-hidden="true"></span>
                                     <span class="help-block">
@@ -146,32 +148,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery.form-validator.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var departments = [
-                'Accounting & Finance',
-                'Marketing',
-                'Architecture',
-                'Economics',
-                'Mass Communication',
-                'Business & Management',
-                'Psychology',
-                'Computer Science',
-                'Industrial Chemistry',
-                'Biotechnology',
-                'Biochemistry',
-                'Geology & Minning',
-                'Applied Science',
-                'Computing & IT',
-                'Biology Education',
-                'Business Education',
-                'Chemistry Education',
-                'Computer Science Education',
-                'Economics Education',
-                'English & Literary Studies Education',
-                'Accounting Education',
-                'Music',
-                'History, International Studies & Diplomacy',
-                'English & Literary Studies'
-            ];
+            var departments = {!! $departments->pluck('name') !!};
             $.formUtils.suggest( $('input[name="department"]'), departments );
             $.validate();
         });

@@ -59,7 +59,13 @@
     <div class="navigation-wrapper">
         <div class="secondary-navigation-wrapper">
             <div class="container">
-                <div class="navigation-contact pull-left">Nwatarali Cheta Sidney  <span class="opacity-70">GOU/12/1443</span></div>
+                <div class="navigation-contact pull-left">
+                @if (Auth::check())
+                    {{ Auth::user()->person->getFullName() }} <span class="opacity-70">{{ Auth::user()->person->registration_number }}</span>
+                @else
+                    Nwatarali Cheta Sidney  <span class="opacity-70">GOU/12/1443</span>
+                @endif
+                </div>
                 <ul class="secondary-navigation list-unstyled pull-right">
                     @if(Auth::guest())
                     <li><a href="{{ url('register') }}">Register</a></li>
