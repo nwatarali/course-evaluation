@@ -22,19 +22,19 @@
                                 <h1>Let's raise the bar of teaching performance! Register now:</h1>
                                 <form id="slider-form" role="form" action="{{ url('redirect_register') }}" method="POST">
                                     {!! csrf_field() !!}
-                                    <!-- <div class="row">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
                                                 <input class="form-control has-dark-background" name="name" id="slider-name" placeholder="Full Name" type="text" required>
                                             </div>
-                                        </div><!-- /.col-md-6 
+                                        </div><!-- /.col-md-6 -->
                                         <div class="col-md-6">
                                             <div class="input-group">
                                                 <input class="form-control has-dark-background" name="email" id="slider-email" placeholder="Email" type="email" required>
                                             </div>
-                                        </div><!-- /.col-md-6 --
-                                    </div> --><!-- /.row -->
-                                    <!-- <div class="row">
+                                        </div><!-- /.col-md-6 -->
+                                    </div><!-- /.row -->
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <select name="new_account_type" id="slider-account-type" class="has-dark-background">
@@ -42,10 +42,10 @@
                                                     <option value="student">Student</option>
                                                     <option value="lecturer">Lecturer</option>
                                                 </select>
-                                            </div>-- /.form-group 
-                                        </div><!-- /.col-md-6
-                                    </div><!-- /.row 
-                                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Register</button> -->
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-6 -->
+                                    </div><!-- /.row -->
+                                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Register</button>
                                     <div id="form-status"></div>
                                 </form>
                             </div><!-- /.col-md-12 -->
@@ -93,6 +93,7 @@
                                     <a href="member-detail.html" class="show-profile">Show Profile</a>
                                 </aside>
                             </article><!-- /.professor-thumbnail -->
+                            <a href="" class="read-more stick-to-bottom">All Lecturers</a>
                         </div><!-- /.professors -->
                     </div><!-- /.section-content -->
                 </section><!-- /.our-professors -->
@@ -100,7 +101,27 @@
 
             <div class="col-md-8 col-sm-8">
                 <section id="gallery">
-                    
+                    <header>
+                        <h2>Latest Courses Reviewed</h2>
+                    </header>
+                    <div class="section-content">
+                        <ul class="gallery-list">
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-01.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-02.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-03.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-04.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-05.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-06.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-07.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-08.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-09.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-10.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-11.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-12.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-13.jpg') }}" alt=""></a></li>
+                            <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-14.jpg') }}" alt=""></a></li>
+                        </ul>
+                        <a href="" class="read-more">All Courses</a>
                     </div><!-- /.section-content -->
                 </section><!-- /.gallery -->
             </div><!-- /.col-md-4 -->
