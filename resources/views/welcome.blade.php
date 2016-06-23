@@ -247,3 +247,14 @@
 </div>
 <!-- end Faculties -->
 @endsection
+
+@section('scripts')
+@parent
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("select[name='new_account_type']").selectize();
+    });
+</script>
+
+@endsection

@@ -86,7 +86,7 @@ $(document).ready(function($) {
 
 //  Selectize
 
-    $('select').selectize();
+    //$('select').selectize();
 
 //  Center Slide Vertically
 

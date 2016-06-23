@@ -93,16 +93,18 @@ class LecturerController extends Controller
                     ->sortBy('last_name')
                     ->map(function ($lecturer) {
                         return array('id' => $lecturer->id, 'name' => $lecturer->getFullName());
-                    });
+                    })
+                    ->values()->all();
         } else {
             $lecturers = Lecturer::all()
                     ->sortBy('last_name')
                     ->map(function ($lecturer) {
                         return array('id' => $lecturer->id, 'name' => $lecturer->getFullName());
-                    });
+                    })
+                    ->values()->all();
         }
 
-        return response()->json($lecturers->pluck('name', 'id'));
+        return response()->json($lecturers);
         
     }
 }

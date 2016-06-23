@@ -70,20 +70,20 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="form-group has-feedback {{ $errors->has('department') ? ' has-error' : '' }}">
+                            <div class="form-group has-feedback {{ $errors->has('department_id') ? ' has-error' : '' }}">
                                 <label for="new-account-department">*Department</label>
-
-                                {!! Form::select('department_id', $departments->pluck('name', 'id'), null, ['placeholder' => 'Department', 'value' => old('department_id'), 'id' => 'new-account-department']) !!}
+                                <select name="department_id" id="new-account-department"><option value="1">A</option></select>
+                                 <!-- Form::select('department_id', $departments->pluck('name', 'id'), null, ['placeholder' => 'Department', 'value' => old('department_id'), 'id' => 'new-account-department']) -->
                                 
-                                @if ($errors->has('department'))
+                                @if ($errors->has('department_id'))
                                     <span class="fa fa-times form-control-feedback" aria-hidden="true"></span>
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('department') }}</strong>
+                                        <strong>{{ $errors->first('department_id') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="form-group has-feedback {{ $errors->has('registration_number') ? ' has-error' : '' }}">
-                                <label for="new-account-department">*Registration Number</label>
+                                <label for="new-account-registration-number">*Registration Number</label>
                                 <div class="input-group">
                                   <span class="input-group-addon">GOU/</span>
                                   <input type="text" class="form-control" id="new-account-registration-number" placeholder="Reg. No." name="registration_number" value="{{ old('registration_number') }}" data-mask="00/0999">
@@ -148,9 +148,20 @@
     <script type="text/javascript" src="{{ asset('js/jquery.form-validator.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var departments = {!! $departments->pluck('name') !!};
-            $.formUtils.suggest( $('input[name="department"]'), departments );
-            $.validate();
+            var $department = $("#new-account-department").selectize({
+                options: JSON.parse('{!! $departments->toJson() !!}'),
+                labelField: 'name',
+                valueField: 'id',
+                searchField: ['name'],
+                sortField: 'name',
+            });
+            var department = $department[0].selectize;
+            department.addOption({
+                id: 0,
+                name: '- Select your department -'
+            });
+            department.refreshOptions(false);
+            department.addItem(0);
         });
     </script>
 

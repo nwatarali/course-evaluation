@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
             'lecturer' => \App\Models\Lecturer::class
         ]);
 
-        view()->share('departments', Department::all());
+        view()->share('departments', Department::all()->sortBy('name'));
     }
 
     /**

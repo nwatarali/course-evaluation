@@ -167,7 +167,11 @@ You can also add comments if necessary!
 		var lecturers, $lecturers;
 
 		$departments = $('#departments').selectize({
-			options: {!! $departments->pluck('name', 'id') !!},
+			options: JSON.parse('{!! $departments->toJson() !!}'),
+            labelField: 'name',
+            valueField: 'id',
+            searchField: ['name'],
+            sortField: 'name',
 		    onChange: function(value) {
 		        if (!value.length) return;
 		        lecturers.disable();
@@ -176,13 +180,18 @@ You can also add comments if necessary!
 		            xhr && xhr.abort();
 		            xhr = $.ajax({
 		                url: "{{ url('json/lecturers') }}",
-				  		data: { department_id: $(this).val() },
+				  		data: { department_id: value },
 		                success: function(results) {
-		                    lecturers.enable();
-		                    callback(results);
-		                },
-		                error: function() {
-		                    callback();
+		                	if(results.length) {
+			                    lecturers.enable();
+			                    callback(results);
+					            lecturers.addOption({
+					                id: 0,
+					                name: '- Select a lecturer -'
+					            });
+					            lecturers.refreshOptions(false);
+					            lecturers.addItem(0);
+					        }
 		                }
 		            })
 		        });
@@ -190,13 +199,21 @@ You can also add comments if necessary!
 		});
 
 		$lecturers = $('#lecturers').selectize({
-		    valueField: 'name',
+		    valueField: 'id',
 		    labelField: 'name',
 		    searchField: ['name']
 		});
 
 		lecturers  = $lecturers[0].selectize;
 		departments = $departments[0].selectize;
+
+
+        departments.addOption({
+            id: 0,
+            name: '- Select your department -'
+        });
+        departments.refreshOptions(false);
+        departments.addItem(0);
 
 		lecturers.disable();
 	});
