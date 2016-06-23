@@ -44,6 +44,5 @@ Route::get('/home', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-   
-   Route::resource('evaluations','EvaluationController');
+
 });
