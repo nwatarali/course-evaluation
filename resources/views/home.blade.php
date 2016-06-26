@@ -20,6 +20,10 @@
                 <p>
                     You are logged in!
                 </p>
+                <br>
+                <form action="{{ url('evaluation/create') }}">
+                <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Start Evaluation</button>
+                </form>
             </section>
         </div><!-- /#page-main -->
         <!-- end MAIN Content -->

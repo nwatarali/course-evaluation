@@ -12,7 +12,11 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-        //
+                Schema::create('courses', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('lecturer_id')->unique();
+            $table->string('name');
+        });
     }
 
     /**
@@ -22,6 +26,6 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('courses');
     }
 }

@@ -139,7 +139,6 @@ You can also add comments if necessary!
     <textarea class="form-control" id="comments" name="comments" placeholder="Say something..."></textarea>
   </div>
 </div>
-</form>
 
 <!-- Button -->
 <div class="form-group">

@@ -4,6 +4,11 @@
 
 @section('content')
 <!-- Slider -->
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="homepage-carousel">
     <div class="container">
         <div class="homepage-carousel-wrapper">
@@ -67,7 +72,7 @@
             <div class="col-md-4 col-sm-4">
                 <section id="our-professors">
                     <header>
-                        <h2>Our Lecturers</h2>
+                        <h2>Our Lecturers for this Evaluation</h2>
                     </header>
                     <div class="section-content">
                         <div class="professors">
@@ -93,7 +98,7 @@
                                     <a href="member-detail.html" class="show-profile">Show Profile</a>
                                 </aside>
                             </article><!-- /.professor-thumbnail -->
-                            <a href="" class="read-more stick-to-bottom">All Lecturers</a>
+                            <!-- <a href="" class="read-more stick-to-bottom">All Lecturers</a> -->
                         </div><!-- /.professors -->
                     </div><!-- /.section-content -->
                 </section><!-- /.our-professors -->
@@ -102,10 +107,10 @@
             <div class="col-md-8 col-sm-8">
                 <section id="gallery">
                     <header>
-                        <h2>Latest Courses Reviewed</h2>
+                       <!--  <h2>Latest Courses Reviewed</h2> -->
                     </header>
                     <div class="section-content">
-                        <ul class="gallery-list">
+                        <!-- <ul class="gallery-list">
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-01.jpg') }}" alt=""></a></li>
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-02.jpg') }}" alt=""></a></li>
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-03.jpg') }}" alt=""></a></li>
@@ -120,8 +125,8 @@
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-12.jpg') }}" alt=""></a></li>
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-13.jpg') }}" alt=""></a></li>
                             <li><a href="{{ asset('img/gallery-big-image.jpg') }}" class="image-popup"><img src="{{ asset('img/image-14.jpg') }}" alt=""></a></li>
-                        </ul>
-                        <a href="" class="read-more">All Courses</a>
+                        </ul> -->
+                        <!-- <a href="" class="read-more">All Courses</a> -->
                     </div><!-- /.section-content -->
                 </section><!-- /.gallery -->
             </div><!-- /.col-md-4 -->

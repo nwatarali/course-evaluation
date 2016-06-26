@@ -18,6 +18,8 @@ class CreateEvaluationsTable extends Migration
                                     $table->foreign('student_id')->references('id')->on('students');
                                     $table->integer('lecturer_id')->unsigned();
                                     $table->foreign('lecturer_id')->references('id')->on('lecturers');
+                                    $table->integer('courses')->unsigned();
+                                    $table->foreign('courses')->references('id')->on('courses');
                                     $table->string('year',9);
                                     $table->tinyinteger('session');
                                     $table->string('grade_received', 1)->nullable();
