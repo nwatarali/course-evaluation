@@ -41,12 +41,12 @@ You can also add comments if necessary!
 
 </center>
 
-<form action="result.php">
+<form action="{{ url('evaluations') }}">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Question 1">My Instructor has knowledge of subject matter</label>  
   <div class="col-md-4">
-  <input id="Question 1" name="Question 1" type="text" placeholder="0 - 5" class="form-control input-md" required="">
+  <input id="Question 1" name="grade_received" type="text" placeholder="0 - 5" class="form-control input-md" required="">
     
   </div>
 </div>

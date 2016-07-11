@@ -47,3 +47,16 @@ Route::group(['middleware' => 'auth'], function () {
 	});
 	Route::resource('evaluation', 'EvaluationController');
 });
+
+Route::resource('result', 'ResultController');
+
+
+Route::resource('question1', 'Question1Controller');
+
+Route::resource('question2', 'Question2Controller');
+
+Route::resource('question3', 'Question3Controller');
+
+Route::resource('question4', 'Question4Controller');
+
+Route::resource('question5', 'Question5Controller');

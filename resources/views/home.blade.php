@@ -21,7 +21,7 @@
                     You are logged in!
                 </p>
                 <br>
-                <form action="{{ url('evaluation/create') }}">
+                <form action="{{ url('result/create') }}">
                 <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Start Evaluation</button>
                 </form>
             </section>

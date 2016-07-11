@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controllers;
+use App\Result;
 
-class EvaluationController extends Controller
+class ResultController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,11 +27,7 @@ class EvaluationController extends Controller
      */
     public function create()
     {
-        $user = \Auth::user();
-        $account_type = $user->person_type;
-        if($account_type == 'student') {
-            return view('evaluation.edit');
-        }
+        return view('results.create');
     }
 
     /**
@@ -40,10 +38,17 @@ class EvaluationController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new evaluations;
+        $post = new Result;
 
-        $post->grade_received = $request->grade_received;
+        $post->grade = $request->grade;
+        $post->lecturer = $request->lecturer;
+        $post->course = $request->course;
+        $post->department = $request->department;
+
+
         $post->save();
+
+        return redirect()->route('result.show', $post->id);
     }
 
     /**
